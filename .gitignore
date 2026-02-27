@@ -1,0 +1,24 @@
+# Data files
+*.csv
+*.xlsx
+*.xls
+*.parquet
+
+# PDFs
+*.pdf
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.env/
+
+# OS
+.DS_Store
+Thumbs.db
+
