@@ -1,0 +1,40 @@
+project:
+  name: "RoadRisk-Public-Spending-Brazil"
+  description: >
+    CRISP-DM Data Science project to analyze traffic accidents in Minas Gerais (MG),
+    support enforcement prioritization, SAMU readiness planning, and assess public spending impact.
+
+paths:
+  data_raw_dir: "data/raw"
+  data_processed_dir: "data/processed"
+  data_final_dir: "data/final"
+  reports_dir: "reports"
+  figures_dir: "reports/figures"
+  models_dir: "models"
+
+data_sources:
+  # These will be used by the ETL script
+  file_encoding: "latin-1"
+  csv_separator: ";"
+
+filters:
+  target_state:
+    enabled: true
+    state_column: "uf"
+    state_value: "MG"
+
+etl:
+  # Large-CSV safety defaults
+  chunksize: 100000
+  # This list MUST match the script's expectation
+  numeric_cols_to_fix:
+    - "km"
+    - "latitude"
+    - "longitude"
+
+outputs:
+  processed_accidents_file: "occ_mg_master.parquet"
+  processed_persons_file: "pers_mg_master.parquet"
+
+reproducibility:
+  random_seed: 42

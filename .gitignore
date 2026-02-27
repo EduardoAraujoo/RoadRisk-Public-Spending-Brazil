@@ -22,3 +22,22 @@ venv/
 .DS_Store
 Thumbs.db
 
+# Dados — nunca subir para o repositório público
+data/raw/
+data/processed/
+data/final/
+
+# Modelos treinados
+models/
+
+# Ambientes virtuais
+venv/
+.env
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
